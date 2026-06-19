@@ -42,6 +42,24 @@ A workflow is included at `.github/workflows/vercel-deploy.yml`.
 - `VERCEL_ORG_ID` (only if you want automatic Vercel deploys)
 - `VERCEL_PROJECT_ID` (only if you want automatic Vercel deploys)
 
+### Add secrets via GitHub
+
+1. Open the GitHub repository.
+2. Go to `Settings` → `Secrets and variables` → `Actions`.
+3. Add the secrets above.
+
+### Add secrets via GitHub CLI
+
+If you have GitHub CLI installed and authenticated, run:
+
+```bash
+gh secret set MONGODB_URI --body "your-mongodb-uri"
+gh secret set MONGODB_DB --body "personalized-learning-path"
+gh secret set VERCEL_TOKEN --body "your-vercel-token"
+gh secret set VERCEL_ORG_ID --body "your-vercel-org-id"
+gh secret set VERCEL_PROJECT_ID --body "your-vercel-project-id"
+```
+
 The workflow will:
 
 1. install dependencies
