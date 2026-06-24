@@ -41,7 +41,7 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' && '--prod' || '' }}
+          vercel-args: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' ? '--prod' : '' }}
           working-directory: .
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
